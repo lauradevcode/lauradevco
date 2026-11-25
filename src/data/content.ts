@@ -33,6 +33,14 @@ export const projects = [
     url: 'https://lp-contabilidade-lauradevcode.vercel.app/'
   },
   {
+    title: 'Nova Detail — Estética Automotiva',
+    category: 'Estética automotiva · Landing page',
+    description: 'Landing page para apresentar serviços de estética automotiva, destacar os cuidados com o veículo e facilitar a solicitação de orçamentos.',
+    scope: 'Criação de landing page com identidade visual automotiva, apresentação dos serviços e chamadas para contato pelo WhatsApp.',
+    image: '/images/projetos/nova-detail-estetica-automotiva.png',
+    url: 'https://lp-esteticaautomotiva-flax.vercel.app/'
+  },
+  {
     title: 'Wilson Alves Advocacia',
     category: 'Advocacia · Site institucional',
     description: 'Projeto desenvolvido para apresentação digital de um escritório de advocacia. Veja a captura ampliada para conhecer a interface e o trabalho visual.',
