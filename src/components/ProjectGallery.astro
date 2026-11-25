@@ -1,0 +1,61 @@
+---
+import { projects } from '../data/content';
+const { limit = 0 } = Astro.props;
+const shown = limit ? projects.slice(0, limit) : projects;
+---
+<div class="portfolio-gallery" data-project-gallery>
+  {shown.map((project, index) => (
+    <article class="portfolio-tile">
+      <button type="button" class="portfolio-open" data-project-open={index} aria-label={`Ampliar projeto ${project.title}`}>
+        <div class="portfolio-image-frame">
+          <img src={project.image} alt={`Captura da página do projeto ${project.title}`} loading="lazy" onerror="this.hidden=true;this.parentElement?.classList.add('image-unavailable')" />
+          <div class="portfolio-image-fallback" aria-hidden="true"><span>Imagem do projeto</span><small>{project.image}</small></div>
+          <span class="portfolio-enlarge" aria-hidden="true">Ampliar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 4H4v4M16 20h4v-4M4 4l6 6m10 10-6-6"/></svg></span>
+        </div>
+        <div class="portfolio-tile-meta"><div><h3>{project.title}</h3><p>{project.category}</p></div><span aria-hidden="true" class="tile-arrow">↗</span></div>
+      </button>
+    </article>
+  ))}
+</div>
+<dialog class="project-modal" data-project-modal aria-label="Detalhes do projeto">
+  <div class="project-modal-shell">
+    <div class="project-modal-top"><span class="project-modal-overline">Portfólio / LauraDevCode</span><button class="project-modal-close" type="button" data-project-close aria-label="Fechar visualização"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m5 5 14 14M19 5 5 19"/></svg></button></div>
+    <div class="project-modal-grid">
+      <div class="project-modal-visual"><img data-modal-image alt=""/><p class="modal-image-unavailable" hidden>Adicione a captura na pasta <code>public/images/projetos/</code> para visualizá-la aqui.</p></div>
+      <div class="project-modal-info"><p class="project-modal-category" data-modal-category></p><h2 data-modal-title></h2><p data-modal-description></p><div class="project-modal-scope" data-modal-scope-wrap><h3>O que foi desenvolvido</h3><p data-modal-scope></p></div><a class="project-site-link" data-modal-link href="#" target="_blank" rel="noopener noreferrer">Visitar projeto <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+    </div>
+  </div>
+</dialog>
+<script define:vars={{galleryProjects:shown}} is:inline>
+  (()=>{
+    const modal=document.querySelector('[data-project-modal]');
+    if(!modal) return;
+    const img=modal.querySelector('[data-modal-image]');
+    const unavailable=modal.querySelector('.modal-image-unavailable');
+    const siteLink=modal.querySelector('[data-modal-link]');
+    let trigger=null;
+    modal.querySelector('[data-project-close]').addEventListener('click',()=>modal.close());
+    modal.addEventListener('click',(e)=>{if(e.target===modal) modal.close()});
+    modal.addEventListener('close',()=>trigger?.focus());
+    img.addEventListener('error',()=>{img.hidden=true;unavailable.hidden=false});
+    document.querySelectorAll('[data-project-gallery] [data-project-open]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const p=galleryProjects[Number(btn.dataset.projectOpen)];
+        if(!p) return;
+        trigger=btn;
+        modal.querySelector('[data-modal-title]').textContent=p.title;
+        modal.querySelector('[data-modal-category]').textContent=p.category;
+        modal.querySelector('[data-modal-description]').textContent=p.description;
+        modal.querySelector('[data-modal-scope]').textContent=p.scope||'';
+        modal.querySelector('[data-modal-scope-wrap]').hidden=!p.scope;
+        siteLink.hidden=!p.url;
+        if(p.url) siteLink.href=p.url;
+        unavailable.hidden=true;img.hidden=false;img.src=p.image;img.alt=`Captura ampliada do projeto ${p.title}`;
+        modal.showModal();
+      });
+    });
+  })();
+</script>
+<style>
+.portfolio-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 22px}.portfolio-tile{min-width:0}.portfolio-open{all:unset;cursor:pointer;display:block;width:100%;color:inherit}.portfolio-open:focus-visible{outline:2px solid var(--red);outline-offset:7px}.portfolio-image-frame{position:relative;aspect-ratio:1.4;background:#ebe8e3;overflow:hidden}.portfolio-image-frame>img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;padding:10px;transition:filter .3s ease}.portfolio-open:hover img{filter:brightness(.96)}.portfolio-image-fallback{display:none;position:absolute;inset:0;align-content:center;text-align:center;padding:25px;color:#77736d}.portfolio-image-fallback span{display:block;font-size:16px}.portfolio-image-fallback small{display:block;font-size:11px;margin-top:8px;overflow-wrap:anywhere}.image-unavailable .portfolio-image-fallback{display:block}.portfolio-enlarge{position:absolute;right:15px;bottom:15px;background:#191919;color:#fff;padding:11px 13px;display:flex;align-items:center;gap:8px;font-size:12px;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s}.portfolio-enlarge svg{width:16px;height:16px}.portfolio-open:hover .portfolio-enlarge,.portfolio-open:focus-visible .portfolio-enlarge{opacity:1;transform:none}.portfolio-tile-meta{display:flex;justify-content:space-between;gap:20px;padding-top:17px}.portfolio-tile-meta h3{font-size:20px;line-height:1.25;letter-spacing:-.035em;margin:0 0 5px}.portfolio-tile-meta p{color:var(--muted);font-size:13px;margin:0}.tile-arrow{font-size:21px;transition:transform .2s}.portfolio-open:hover .tile-arrow{transform:translate(3px,-3px)}.project-modal{border:0;padding:0;background:#f8f7f4;color:var(--ink);width:min(1180px,calc(100% - 36px));max-height:calc(100dvh - 36px);box-shadow:0 20px 100px #0006}.project-modal::backdrop{background:#101010dc;backdrop-filter:blur(5px)}.project-modal-shell{padding:23px 30px 32px}.project-modal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.project-modal-overline{font-size:12px;color:#77716b}.project-modal-close{background:transparent;border:0;padding:7px;cursor:pointer;display:grid;place-items:center}.project-modal-close:hover{color:var(--red)}.project-modal-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(260px,.6fr);gap:36px}.project-modal-visual{background:#e6e2dc;min-height:260px;max-height:70dvh;overflow:auto;overscroll-behavior:contain}.project-modal-visual img{display:block;width:100%;height:auto}.modal-image-unavailable{padding:45px 20px;color:var(--muted)}.project-modal-info{padding:10px 0}.project-modal-category{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--red);font-weight:700}.project-modal-info h2{font-size:clamp(27px,3.1vw,43px);margin:18px 0}.project-modal-info>p:not(.project-modal-category){font-size:16px;color:#555;line-height:1.65}.project-modal-scope{margin:34px 0}.project-modal-scope h3{font-size:15px;letter-spacing:0}.project-modal-scope p{color:#555;font-size:14px}.project-site-link{display:inline-flex;gap:15px;align-items:center;background:var(--ink);color:white;padding:14px 18px;font-size:13px;font-weight:700;transition:background .2s}.project-site-link:hover{background:var(--red)}[hidden]{display:none!important}@media(max-width:900px){.portfolio-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.project-modal-grid{grid-template-columns:1fr;gap:24px}.project-modal-visual{max-height:47dvh}.project-modal-shell{padding:18px}.project-modal-info{padding:0}}@media(max-width:600px){.portfolio-gallery{grid-template-columns:1fr;gap:29px}.portfolio-image-frame{aspect-ratio:1.4}.portfolio-enlarge{opacity:1;transform:none}.project-modal{width:calc(100% - 18px);max-height:calc(100dvh - 18px)}.project-modal-info h2{margin:8px 0 14px}.project-modal-visual{max-height:38dvh}}
+</style>

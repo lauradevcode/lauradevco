@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const profileUrl = 'https://share.google/sPu7p0z5boKD4ZxLo';
+const improvements = [
+  { number: '01', title: 'Informações e serviços', description: 'Revisão da apresentação comercial, serviços, categorias e dados do estabelecimento.' },
+  { number: '02', title: 'Fotos e identidade visual', description: 'Organização de imagens, capa e materiais que mostram o espaço e o trabalho da oficina.' },
+  { number: '03', title: 'Vídeos e atualizações', description: 'Publicação de vídeos e conteúdos para apresentar a oficina e manter o perfil atualizado.' },
+  { number: '04', title: 'Presença local e avaliações', description: 'Ajustes para facilitar a descoberta do negócio e orientar a gestão de avaliações e informações.' },
+];
+---
+<BaseLayout>
+  <section class="page-hero">
+    <div class="container hero-inner reveal">
+      <span class="eyebrow">Google Meu Negócio / Presença local</span>
+      <h1>Seu Perfil no Google precisa mostrar o trabalho que você oferece.</h1>
+      <p class="muted intro">Organizo categorias, informações, serviços, fotos, vídeos e publicações para que as pessoas entendam o que você faz e saibam como entrar em contato.</p>
+      <div class="hero-actions"><a class="btn" href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20Perfil%20da%20Empresa%20no%20Google.">Quero avaliar meu perfil ↗</a><a class="case-link" href="#case-danubio">Ver projeto real <span aria-hidden="true">↓</span></a></div>
+    </div>
+  </section>
+  <section class="case-section section" id="case-danubio" aria-labelledby="case-title">
+    <div class="container">
+      <div class="case-head reveal">
+        <div><span class="eyebrow">Case real / Oficina de motos</span><h2 id="case-title">Danúbio Motos.<br/><span class="muted-title">Mais informações, imagens e atualizações no Google.</span></h2></div>
+        <div class="case-side"><p>Porto Belo, Santa Catarina</p><a href={profileUrl} target="_blank" rel="noopener noreferrer" class="case-link">Visualizar perfil no Google <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="case-summary reveal">
+        <div><span class="small-label">O desafio</span><p>Apresentar a oficina de forma mais completa no Google, com informações consistentes e conteúdos que mostrassem seus serviços e sua localização.</p></div>
+        <div><span class="small-label">O trabalho</span><p>Otimização das informações, atualização de serviços, organização de fotos, capa, vídeos e publicações para fortalecer a apresentação local.</p></div>
+        <div><span class="small-label">O resultado observado</span><p>O acompanhamento do perfil registrou evolução de desempenho após o trabalho. As métricas detalhadas serão publicadas após conferência dos relatórios originais.</p></div>
+      </div>
+      <div class="case-detail">
+        <div class="case-detail-intro reveal"><span class="eyebrow">O que foi feito</span><h3>Melhorias reais, não apenas uma mudança de aparência.</h3><p>O trabalho envolveu a organização do perfil e a produção de uma presença mais atualizada para quem procura a oficina no Google Maps.</p></div>
+        <div class="case-list">{improvements.map((item) => <article class="case-item reveal"><span class="case-number">{item.number}</span><div><h4>{item.title}</h4><p>{item.description}</p></div><span class="case-mark" aria-hidden="true">↗</span></article>)}</div>
+      </div>
+      <div class="case-footer reveal"><p>Quer ver o resultado publicado? Acesse o perfil real da oficina.</p><a href={profileUrl} target="_blank" rel="noopener noreferrer" class="btn">Abrir Danúbio Motos no Google ↗</a></div>
+      <p class="case-disclaimer">Case de execução e acompanhamento. Resultados variam conforme o negócio, o período e outros fatores. A otimização não garante posições específicas nas buscas.</p>
+    </div>
+  </section>
+  <section class="section dark"><div class="container two-col"><div class="reveal"><span class="eyebrow">Como funciona</span><h2>Diagnóstico, implementação e continuidade.</h2><p>Atendo profissionais liberais, prestadores de serviços e negócios locais em Brasília e em outras regiões do Brasil.</p></div><div class="method-steps"><div class="reveal"><span>01</span><div><h3>Diagnóstico do perfil</h3><p>Reviso informações públicas, categorias, serviços e oportunidades de melhoria.</p></div></div><div class="reveal"><span>02</span><div><h3>Otimização de informações</h3><p>Organizo descrição, serviços e atributos aplicáveis ao negócio.</p></div></div><div class="reveal"><span>03</span><div><h3>Conteúdo e acompanhamento</h3><p>Oriento fotos, publicações e boas práticas para avaliações legítimas.</p></div></div></div></div></section>
+  <section class="section"><div class="container reveal"><h2>Seu perfil mostra tudo o que você oferece?</h2><p class="muted">Me conte qual serviço você oferece e o que precisa atualizar no seu perfil.</p><a class="btn" href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20melhorar%20meu%20Perfil%20da%20Empresa%20no%20Google.">Conversar sobre meu perfil ↗</a></div></section>
+</BaseLayout>
+<style>
+.page-hero{padding:94px 0 106px}.hero-inner{max-width:1000px}.page-hero h1{max-width:940px;letter-spacing:-.045em;line-height:1.08}.intro{max-width:720px;line-height:1.75}.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:30px}.case-link{display:inline-flex;gap:14px;align-items:center;font-weight:650;text-decoration:none;color:inherit;border-bottom:1px solid currentColor;padding-bottom:6px;transition:color .25s,border-color .25s}.case-link:hover{color:var(--red)}.case-section{background:#f7f7f6;color:#1b1b1b}.case-head{display:flex;justify-content:space-between;align-items:end;gap:42px;padding-bottom:38px;border-bottom:1px solid #d9d9d6}.case-head h2{font-size:clamp(2.3rem,5vw,4.6rem);line-height:1.08;letter-spacing:-.055em;margin:20px 0 0}.muted-title{color:#777}.case-side{min-width:215px}.case-side p{font-size:14px;color:#656565;margin-bottom:18px}.case-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding:38px 0 58px;border-bottom:1px solid #d9d9d6}.small-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:750;color:var(--red)}.case-summary p{line-height:1.7;margin-top:12px;color:#454545}.case-detail{display:grid;grid-template-columns:.85fr 1.15fr;gap:9%;padding:82px 0}.case-detail-intro h3{font-size:clamp(1.8rem,3.3vw,3rem);line-height:1.12;letter-spacing:-.035em;margin:18px 0}.case-detail-intro p{color:#666;line-height:1.75}.case-item{display:grid;grid-template-columns:38px 1fr 20px;gap:16px;padding:24px 0;border-bottom:1px solid #d9d9d6;transition:padding-left .3s ease,background .3s ease}.case-item:first-child{border-top:1px solid #d9d9d6}.case-item:hover{padding-left:10px}.case-number{color:var(--red);font-size:12px;font-weight:750;padding-top:5px}.case-item h4{font-size:1.12rem;margin:0 0 8px}.case-item p{font-size:14px;line-height:1.6;color:#666;margin:0}.case-mark{color:var(--red);transition:transform .25s}.case-item:hover .case-mark{transform:translate(3px,-3px)}.case-footer{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:30px 0;border-top:1px solid #d9d9d6}.case-footer p{font-weight:600}.case-disclaimer{font-size:12px;color:#777;line-height:1.6}.method-steps>div{display:grid;grid-template-columns:44px 1fr;gap:16px;margin-bottom:24px}.method-steps span{color:var(--red);font-weight:700}.method-steps p{color:var(--muted)}.reveal{animation:case-appear .7s both;animation-timeline:view();animation-range:entry 0% cover 25%}@keyframes case-appear{from{opacity:.35;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@supports not (animation-timeline:view()){.reveal{animation:none}}@media(max-width:800px){.case-head{align-items:start;flex-direction:column}.case-summary{grid-template-columns:1fr;gap:22px}.case-detail{grid-template-columns:1fr;gap:32px;padding:55px 0}.case-footer{align-items:start;flex-direction:column}}@media(max-width:700px){.page-hero{padding:56px 0 65px}.case-head h2{font-size:2.45rem}.case-section{padding-top:65px}.hero-actions{gap:20px}}@media(prefers-reduced-motion:reduce){.reveal{animation:none}.case-item,.case-mark{transition:none}}
+</style>

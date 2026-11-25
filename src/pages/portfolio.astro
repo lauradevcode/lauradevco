@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectGallery from '../components/ProjectGallery.astro';
+import SocialMediaGallery from '../components/SocialMediaGallery.astro';
+---
+<BaseLayout title="Sites e Design para Redes Sociais | Laura Dev Code" description="Conheça sites, páginas de vendas e artes para redes sociais criados pela Laura Dev Code para profissionais e negócios.">
+  <section class="page-hero"><div class="container">
+    <span class="eyebrow">Portfólio / Laura Dev Code</span>
+    <h1>Projetos que mostram o trabalho.</h1>
+    <p class="muted">Sites, páginas de vendas e artes para redes sociais. Veja trabalhos de diferentes áreas e conheça as peças que foram criadas.</p>
+    <nav class="portfolio-category-nav" aria-label="Categorias do portfólio"><a href="#projetos-web">Sites e páginas de vendas <span aria-hidden="true">↗</span></a><a href="#design-social">Design para redes sociais <span aria-hidden="true">↗</span></a></nav>
+  </div></section>
+  <section class="portfolio-page-section" id="projetos-web"><div class="container">
+    <div class="portfolio-section-heading"><span class="eyebrow">01 / Criação de sites</span><h2>Sites e páginas de vendas.</h2><p>Sites criados para profissionais e negócios de diferentes áreas. Clique para ver os detalhes ou visitar o projeto publicado.</p></div>
+    <ProjectGallery />
+  </div></section>
+  <section class="portfolio-design-section" id="design-social"><div class="container">
+    <div class="portfolio-section-heading"><span class="eyebrow">02 / Design para redes sociais</span><h2>Artes com identidade e intenção.</h2><p>Exemplos de posts e carrosséis criados para temas de psicologia. Também desenvolvo artes para profissionais e negócios de outras áreas.</p><a class="text-link" href="/servicos/design-para-redes-sociais">Conhecer o serviço de design ↗</a></div>
+    <SocialMediaGallery />
+    <p class="portfolio-disclaimer">Estudos visuais autorais; não representam resultados de campanhas de clientes.</p>
+  </div></section>
+  <section class="section portfolio-contact"><div class="container"><h2>Vamos conversar sobre sua próxima entrega?</h2><p>De um site a uma série de publicações, podemos definir o formato que faz sentido para sua marca.</p><a class="btn" href="/#orcamento">Solicitar um orçamento ↗</a></div></section>
+</BaseLayout>
+<style>
+.page-hero{padding-bottom:64px}
+.page-hero .eyebrow{display:block;margin-bottom:17px}
+.page-hero h1{margin-bottom:20px}
+.page-hero p{max-width:760px}
+.portfolio-category-nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px}
+.portfolio-category-nav a{display:inline-flex;align-items:center;gap:24px;padding:13px 18px;border:1px solid #c9c4bf;font-weight:700;font-size:13px;transition:background .2s,color .2s}
+.portfolio-category-nav a:first-child{background:#222;color:white;border-color:#222}
+.portfolio-category-nav a:hover{background:var(--red);border-color:var(--red);color:#fff}
+.portfolio-page-section{padding:0 0 105px;scroll-margin-top:25px}
+.portfolio-design-section{padding:95px 0 115px;background:#fff;scroll-margin-top:25px}
+.portfolio-section-heading{max-width:790px;margin-bottom:46px}
+.portfolio-section-heading h2{font-size:clamp(30px,3.5vw,50px);margin:12px 0 15px}
+.portfolio-section-heading p{font-size:16px;color:var(--muted);max-width:710px}
+.portfolio-section-heading .text-link{margin-top:7px}
+.portfolio-disclaimer{font-size:13px;color:#77716a;margin:30px 0 0}
+.portfolio-contact{text-align:center;background:#eeebe6}
+.portfolio-contact h2{max-width:780px;margin:0 auto 18px}
+.portfolio-contact p{max-width:650px;color:var(--muted);margin:0 auto 25px}
+@media(max-width:700px){.portfolio-page-section{padding-bottom:70px}.portfolio-design-section{padding:66px 0 77px}.portfolio-section-heading,.page-hero{text-align:center}.portfolio-section-heading{margin-bottom:36px}.portfolio-category-nav{justify-content:center}.portfolio-category-nav a{width:100%;justify-content:space-between}.portfolio-contact .btn{width:100%}}
+</style>

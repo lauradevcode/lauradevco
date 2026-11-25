@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';import {services} from '../../data/content';
+export function getStaticPaths(){return services.filter(service=>service.id !== 'design-para-redes-sociais').map(service=>({params:{slug:service.id},props:{service}}))}
+const {service}=Astro.props;
+const headlines: Record<string,string> = {
+  'criacao-de-sites': 'Um site que apresenta seu serviço com clareza e facilita a contratação.',
+  'sistemas-web': 'Sua rotina não precisa depender de planilhas e processos manuais.',
+  'lojas-virtuais': 'Seus produtos organizados em uma experiência de compra online.',
+  'trafego-pago': 'Campanhas precisam de planejamento, acompanhamento e ajustes.'
+};
+const ctas: Record<string,string> = {
+  'google-meu-negocio': 'Quero avaliar meu perfil',
+  'criacao-de-sites': 'Quero criar meu site',
+  'sistemas-web': 'Conversar sobre meu sistema',
+  'lojas-virtuais': 'Quero uma loja virtual',
+  'trafego-pago': 'Conversar sobre gestão de anúncios',
+  'google-ads': 'Conversar sobre Google Ads',
+  'meta-ads': 'Conversar sobre Meta Ads'
+};
+const wa = 'https://wa.me/5561998213684?text='+encodeURIComponent('Olá, Laura! Vi seu site e quero conversar sobre '+service.title+'.');
+---
+<BaseLayout title={`${service.title} | Laura Dev Code`} description={service.summary}><section class="page-hero"><div class="container"><span class="eyebrow">{service.eyebrow}</span><h1>{headlines[service.id] ?? service.title}<span class="accent">{headlines[service.id] ? "" : "."}</span></h1><p class="muted">{service.summary}</p><a class="btn" href={wa}>{ctas[service.id] ?? "Conversar sobre meu projeto"} ↗</a></div></section><section class="section dark"><div class="container two-col"><div><span class="eyebrow">O que está incluído</span><h2>O que você recebe neste serviço.</h2></div><div><p class="lead">{service.description}</p><ul class="feature-list">{service.items.map(item=><li>{item}</li>)}</ul></div></div></section><section class="section"><div class="container two-col"><div><span class="eyebrow">Como trabalho</span><h2>Você sabe o que será feito em cada etapa.</h2></div><div><p class="muted">Conversamos sobre o que você precisa, combinamos as etapas e eu cuido da execução. Você acompanha o andamento e sabe o que será entregue.</p><a href={wa} class="text-link">Conversar sobre meu projeto ↗</a></div></div></section><section class="contact-band"><div class="container"><h2>Me conte o que precisa melhorar hoje.</h2><a class="btn" href={wa}>Falar com Laura no WhatsApp ↗</a></div></section></BaseLayout>
+<style>.accent{color:var(--red)}.page-hero .btn{margin-top:22px}.lead{font-size:20px;color:#dedbd6}.feature-list li{color:#fff}</style>

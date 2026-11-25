@@ -1,0 +1,80 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { SITE_URL, getSeoForPath, makeStructuredData } from '../data/seo';
+
+const path = Astro.url.pathname;
+const seo = getSeoForPath(path);
+const { title = seo.title, description = seo.description } = Astro.props;
+const normalizedPath = path === '/' ? '/' : `${path.replace(/\/+/g, '/').replace(/\/$/, '')}/`;
+const canonical = new URL(normalizedPath, SITE_URL).toString();
+const ogImage = new URL('/images/laura-home.webp', SITE_URL).toString();
+// ID real do fluxo Web LauraDevCode, informado em 10/11/2026.
+// Não instale também o GA4 via Google Tag Manager: isso duplicaria a coleta.
+const ga4Id = 'G-8B6T2J37ED';
+const hasGa4 = /^G-[A-Z0-9]+$/.test(ga4Id);
+const schemas = makeStructuredData(path, canonical, title, description);
+---
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#f8f7f4" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<title>{title}</title>
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:site_name" content="Laura Dev Code" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:alt" content="Laura Dev Code — criação de sites e presença digital em Brasília" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+<script type="application/ld+json" set:html={JSON.stringify(schemas)} />
+{hasGa4 && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>}
+{hasGa4 && <script is:inline define:vars={{ ga4Id }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', ga4Id);
+</script>}
+</head><body><a href="#conteudo" class="skip">Pular para conteúdo</a><Header/><main id="conteudo"><slot/></main><Footer/><script>
+  const boot=()=>{
+    const header=document.querySelector<HTMLElement>('.header');
+    let last=window.scrollY;
+    window.addEventListener('scroll',()=>{const y=window.scrollY;header?.classList.toggle('is-scrolled',y>15);last=y},{passive:true});
+    document.querySelectorAll<HTMLElement>('[data-reveal], .section-heading, .service-item, .project, .method-steps > div').forEach((el)=>el.classList.add('reveal-ready'));
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+      const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}})},{threshold:.09,rootMargin:'0px 0px -25px 0px'});
+      document.querySelectorAll('.reveal-ready').forEach(el=>observer.observe(el));
+    }else{document.querySelectorAll('.reveal-ready').forEach(el=>el.classList.add('is-visible'))}
+  };
+  boot();
+</script>{hasGa4 && <script is:inline>
+  document.addEventListener('click', function(event) {
+    const a = event.target && event.target.closest ? event.target.closest('a[href]') : null;
+    if (!a || typeof window.gtag !== 'function') return;
+    const href = a.getAttribute('href') || '';
+    if (/^(https:\/\/wa\.me\/|https:\/\/api\.whatsapp\.com\/)/i.test(href)) {
+      window.gtag('event', 'contact_click', { contact_method: 'whatsapp', transport_type: 'beacon' });
+    }
+    if (a.getAttribute('href') === '/#orcamento' || a.getAttribute('href') === '#orcamento') {
+      window.gtag('event', 'brief_form_view_intent', { transport_type: 'beacon' });
+    }
+  });
+  document.addEventListener('submit', function(event) {
+    if (event.target && event.target.matches && event.target.matches('[data-brief-form]') && typeof window.gtag === 'function') {
+      // Mede a intenção de abrir o WhatsApp; não equivale a mensagem enviada.
+      window.gtag('event', 'brief_form_submit_intent', { transport_type: 'beacon' });
+    }
+  }, true);
+</script>}
+</body></html>

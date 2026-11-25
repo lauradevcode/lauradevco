@@ -1,0 +1,20 @@
+IMAGENS DO PORTFÓLIO — LauraDevCode
+
+Copie seus três arquivos PNG para ESTA pasta e renomeie assim:
+
+1. Advogado em Águas Lindas de Goiás_ Wilson Alves Advocacia.png
+   -> wilson-alves-advocacia.png
+
+2. Daiane Alcantara _ Psicóloga em Sorocaba - TCC Presencial.png
+   -> daiane-alcantara.png
+
+3. Luan Pereira_ Personal Trainer — Academia sem medo (1).png
+   -> luan-pereira.png
+
+IMPORTANTE:
+- Windows pode ocultar a extensão .png. Ative Exibir > Extensões de nomes de arquivo.
+- NÃO deixe os nomes como .png.png.
+- As fotos da captura de tela não estão incluídas neste pacote; você precisa copiar os PNGs originais.
+- Para adicionar links reais de sites publicados: src/data/content.ts, campo url: '' de cada projeto.
+- Não inclua link se a página não é pública, se não houver autorização, ou se for apenas mockup.
+- O modal já funciona e exibe o print completo em tamanho ampliado.

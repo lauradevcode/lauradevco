@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';import BriefForm from '../components/BriefForm.astro';import {services} from '../data/content';import ProjectGallery from '../components/ProjectGallery.astro';import SocialMediaTeaser from '../components/SocialMediaTeaser.astro';
+---
+<BaseLayout><section class="hero"><div class="hero-motion" aria-hidden="true"><svg viewBox="0 0 1440 780" preserveAspectRatio="xMidYMid slice" focusable="false"><g class="motion-grid"><path d="M-30 180H1470M-30 370H1470M-30 560H1470M160 -30V810M430 -30V810M700 -30V810M970 -30V810M1240 -30V810"/></g><g class="motion-geometry"><circle cx="1130" cy="215" r="175"/><path d="M710 95 1030 95 1030 415 710 415Z"/><path d="M-35 650 570 45"/><circle cx="310" cy="530" r="85"/></g><path class="motion-trace" d="M1040 -40 560 440 820 700"/></svg></div><div class="container hero-inner"><div class="hero-content"><h1>Quando alguém procura pelo seu serviço, <em>encontra motivos para escolher você?</em></h1><p>Sou Laura, especialista em criação de sites e presença digital em Brasília. Há 7 anos trabalho com projetos digitais. Ajudo psicólogos, advogados, prestadores de serviços e empresas a apresentar seu trabalho, aparecer no Google e facilitar o contato com clientes.</p><div class="actions"><a class="btn" href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto%20digital.">Conversar sobre meu projeto <span aria-hidden="true">↗</span></a><a class="text-link" href="/portfolio">Conhecer meus trabalhos <span aria-hidden="true">↗</span></a></div></div><div class="hero-visual" aria-label="Laura, profissional à frente da LauraDevCode, trabalhando em seu computador"><img src="/images/laura-home.webp" width="1448" height="1086" alt="Laura trabalhando em seu computador Lenovo de mesa no escritório" loading="eager" fetchpriority="high" /><div class="hero-photo-shade" aria-hidden="true"></div></div></div></section><div class="proof-line"><div class="container proof-line-inner"><span>SITES E SISTEMAS</span><span>PRESENÇA NO GOOGLE</span><span>DESIGN E ANÚNCIOS</span><a href="/portfolio">CONHEÇA PROJETOS REAIS ↗</a></div></div><section class="intro section"><div class="container two-col"><div><span class="eyebrow">Sites, Google e comunicação digital</span><h2>Seu cliente precisa entender o que você faz — e como contratar.</h2></div><div class="intro-copy"><p>Seu site precisa explicar o que você oferece. Seu perfil no Google precisa passar confiança. E seus anúncios devem levar as pessoas até o seu serviço.</p><p>Atendo diretamente psicólogos, advogados, profissionais autônomos, comércios e empresas. Cada projeto começa com uma conversa sobre o que você realmente precisa.</p><a href="/sobre" class="text-link">Conheça meu trabalho ↗</a></div></div></section><section class="section solution-index" aria-labelledby="solutions-heading"><div class="container"><div class="section-heading"><span class="eyebrow">Por onde começar</span><h2 id="solutions-heading">O que está impedindo seu negócio de avançar no digital?</h2><p class="muted">Encontre o ponto que precisa melhorar e conheça uma solução.</p></div><div class="solution-index-grid"><a href="#google-negocio" class="solution-tile"><span>01 / VISIBILIDADE LOCAL</span><h3>Não encontram meu serviço no Google</h3><p>Perfil organizado, com serviços, localização e contato claros.</p><strong>Ver como funciona ↗</strong></a><a href="#trafego-pago" class="solution-tile"><span>02 / AQUISIÇÃO</span><h3>Preciso chegar a pessoas interessadas</h3><p>Anúncios conforme seu público, serviço e orçamento.</p><strong>Ver como funciona ↗</strong></a><a href="#sites-sistemas" class="solution-tile"><span>03 / TECNOLOGIA</span><h3>Preciso de um site melhor ou organizar meus processos</h3><p>Páginas para apresentar serviços e sistemas para facilitar a rotina.</p><strong>Ver como funciona ↗</strong></a></div></div></section>
+<section class="section featured-google" id="google-negocio" aria-labelledby="google-heading"><div class="container feature-layout"><div><span class="eyebrow">Google Meu Negócio / Perfil da Empresa</span><h2 id="google-heading">Seu cliente procura no Google. O que ele encontra sobre você?</h2><p>Organizo serviços, categorias, fotos, vídeos, publicações e informações do seu Perfil da Empresa no Google para apresentar melhor seu trabalho na Pesquisa e no Google Maps.</p><ul class="feature-points"><li>Categorias, serviços, descrição e dados de contato organizados</li><li>Fotos, vídeos, capa e publicações que mostram seu trabalho</li><li>Orientação para avaliações legítimas e acompanhamento do perfil</li></ul><div class="feature-actions"><a class="btn" href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20otimizar%20meu%20Perfil%20da%20Empresa%20no%20Google.">Quero melhorar meu perfil ↗</a><a href="/servicos/google-meu-negocio/#case-danubio" class="text-link">Ver o case Danúbio Motos ↗</a></div><p class="feature-note">A otimização melhora a qualidade do perfil, mas não garante uma posição específica nas buscas.</p></div><div class="google-feature-art" aria-label="Simulação visual de pesquisas locais, com estabelecimentos fictícios">
+  <div class="local-demo-window">
+    <div class="local-demo-bar"><span class="local-demo-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>BUSCA LOCAL · EXEMPLO INTERATIVO</span><span class="local-demo-live"><span aria-hidden="true"></span> DEMO</span></div>
+    <div class="local-demo-content">
+      <div class="local-demo-overline">Imagine um cliente procurando agora...</div>
+      <div class="search-pill" aria-label="Pesquisa local simulada">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <span class="search-query-wrap"><span id="local-search-query" class="search-query">oficina mecânica perto de mim</span><span class="type-caret" aria-hidden="true"></span></span>
+      </div>
+      <div class="search-demo-results" aria-label="Lista de estabelecimentos fictícios">
+        <div class="search-demo-results-heading"><strong>Resultados encontrados</strong><span id="local-search-category">Oficinas</span></div>
+        <div class="search-demo-list" id="local-search-list">
+          <div class="demo-result"><span class="demo-result-icon" aria-hidden="true">01</span><div class="demo-result-body"><strong>Oficina do Bairro</strong><small>Oficina mecânica · Informações e contato</small></div><span class="demo-result-arrow" aria-hidden="true">↗</span></div>
+          <div class="demo-result"><span class="demo-result-icon" aria-hidden="true">02</span><div class="demo-result-body"><strong>Centro Automotivo Exemplo</strong><small>Serviços automotivos · Ver no mapa</small></div><span class="demo-result-arrow" aria-hidden="true">↗</span></div>
+          <div class="demo-result"><span class="demo-result-icon" aria-hidden="true">03</span><div class="demo-result-body"><strong>Mecânica Local</strong><small>Manutenção de veículos · Saiba mais</small></div><span class="demo-result-arrow" aria-hidden="true">↗</span></div>
+        </div>
+      </div>
+      <div class="local-demo-foot"><span class="local-demo-foot-symbol" aria-hidden="true">↗</span><span>Seu negócio pode ser descoberto em buscas relevantes.</span></div>
+    </div>
+  </div>
+  <p class="demo-disclaimer">Simulação com nomes fictícios. Não representa resultados reais nem garante posições no Google.</p>
+</div></div></section>
+<section class="section paid-traffic" id="trafego-pago" aria-labelledby="traffic-heading"><div class="container"><div class="section-heading"><span class="eyebrow">Anúncios no Google e nas redes sociais</span><h2 id="traffic-heading">Anúncios com objetivo definido, não apenas cliques.</h2><p class="muted">No Google, você pode aparecer para quem já procura seu serviço. No Instagram e Facebook, pode apresentar seu trabalho a novos públicos. Planejo as campanhas de acordo com seu objetivo e orçamento.</p></div><div class="traffic-grid"><article class="traffic-item"><span class="traffic-tag">GOOGLE ADS</span><h3>Apareça para quem já está procurando.</h3><p>Anúncios para pessoas que já estão procurando serviços como o seu, nas regiões em que você atende.</p><ul><li>Escolha das buscas e regiões mais relevantes</li><li>Anúncios e acompanhamento dos contatos</li><li>Ajustes conforme o desempenho dos anúncios</li></ul><a href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20anunciar%20no%20Google%20Ads." class="text-link">Quero anunciar no Google ↗</a></article><article class="traffic-item"><span class="traffic-tag">META ADS</span><h3>Apresente sua oferta a novos públicos.</h3><p>Anúncios no Instagram e Facebook para apresentar seu serviço a pessoas com interesse no que você oferece.</p><ul><li>Definição de público, objetivo e oferta</li><li>Criação e testes de anúncios</li><li>Acompanhamento e ajustes dos anúncios</li></ul><a href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20anunciar%20no%20Instagram%20e%20Facebook." class="text-link">Quero anunciar nas redes sociais ↗</a></article></div><p class="feature-note">Investimento em anúncios é separado da gestão. Resultados variam conforme mercado, oferta, concorrência e orçamento.</p></div></section>
+<section class="section digital-build" id="sites-sistemas" aria-labelledby="build-heading"><div class="container feature-layout"><div><span class="eyebrow">Criação de sites e sistemas</span><h2 id="build-heading">Um site para apresentar seu trabalho. Um sistema para facilitar sua operação.</h2><p>Crio sites que explicam seus serviços e facilitam o contato. Também desenvolvo sistemas para organizar agendamentos, cadastros e tarefas do dia a dia.</p><div class="build-list"><div><h3>Sites e páginas de vendas</h3><p>Sites que funcionam no celular e páginas que mostram seu serviço com clareza e facilitam o contato.</p></div><div><h3>Sistemas para seu negócio</h3><p>Agendamentos, painéis, cadastros e ferramentas para organizar a rotina.</p></div><div><h3>Menos tarefas repetitivas</h3><p>Ferramentas conectadas para economizar tempo e evitar retrabalho.</p></div></div><a class="btn" href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20um%20site%20ou%20sistema%20web.">Conversar sobre meu projeto ↗</a></div><div class="build-visual" aria-hidden="true"><div class="build-visual-header"><span></span><span></span><span></span><small>ESTRUTURA DIGITAL</small></div><div class="build-flow"><div>Presença digital</div><i></i><div>Contato e conversão</div><i></i><div>Operação organizada</div></div><p>Cada etapa conectada ao que o negócio realmente precisa.</p></div></div></section>
+<section class="section dark services-redesign" id="servicos" aria-labelledby="services-title"><div class="container"><div class="services-heading" data-reveal><div><span class="eyebrow">O que eu faço</span><h2 id="services-title">O que posso fazer<br /><em>pelo seu negócio.</em></h2></div><p>Serviços que você pode contratar individualmente, conforme sua necessidade.</p></div><div class="services-list">{[
+{number:'01',eyebrow:'Visibilidade local',title:'Presença no Google',summary:'Organização e otimização do perfil para mostrar seus serviços nas buscas locais.',href:'/servicos/google-meu-negocio',tags:['Perfil da Empresa','Google Maps']},
+{number:'02',eyebrow:'Divulgação online',title:'Gestão de anúncios',summary:'Anúncios no Google, Instagram e Facebook com acompanhamento dos contatos.',href:'/servicos/trafego-pago',tags:['Google Ads','Meta Ads']},
+{number:'03',eyebrow:'Sua presença online',title:'Criação de sites',summary:'Sites e páginas de vendas que mostram seus serviços e facilitam o contato.',href:'/servicos/criacao-de-sites',tags:['Sites profissionais','Páginas de vendas']},
+{number:'04',eyebrow:'Organização do negócio',title:'Sistemas sob medida',summary:'Ferramentas e painéis para organizar atendimentos, clientes e tarefas.',href:'/servicos/sistemas-web',tags:['Sistemas','Plataformas digitais']},
+{number:'05',eyebrow:'Comércio digital',title:'Lojas virtuais',summary:'Lojas virtuais com catálogo, páginas de produtos e compra organizada.',href:'/servicos/lojas-virtuais',tags:['Loja online','Catálogos']},
+{number:'06',eyebrow:'Design e conteúdo',title:'Design para redes sociais',summary:'Posts, carrosséis, legendas e materiais visuais alinhados à sua marca.',href:'/servicos/design-para-redes-sociais',tags:['Carrosséis','Posts','Conteúdo']}
+].map((s,i)=><article class="service-row" data-reveal style={`--item-index:${i}`}><div class="service-row-index"><span>{s.number}</span><small>{s.eyebrow}</small></div><div class="service-row-main"><h3>{s.title}</h3><p>{s.summary}</p><div class="service-tags">{s.tags.map(tag=><span>{tag}</span>)}</div></div><a href={s.href} class="service-row-link" aria-label={`Conhecer ${s.title}`}><span>Conhecer serviço</span><span class="service-arrow" aria-hidden="true">↗</span></a></article>)}</div></div></section><section class="section work"><div class="container"><div class="work-top"><div class="section-heading"><span class="eyebrow">Projetos e experiência</span><h2>Projetos que mostram o que entrego.</h2><p class="muted">Sites, páginas de vendas e trabalhos de design para diferentes áreas. Veja os projetos, os detalhes e como cada serviço foi apresentado.</p></div><a class="text-link" href="/portfolio">Explorar portfólio ↗</a></div><ProjectGallery /><p class="portfolio-breadth">Projetos selecionados de diferentes segmentos. Cada trabalho é apresentado conforme o que foi efetivamente desenvolvido.</p></div></section><SocialMediaTeaser /><section class="section method"><div class="container two-col"><div><span class="eyebrow">Como trabalho</span><h2>Você sabe o que será feito, do início à entrega.</h2></div><div class="method-steps"><div><span>01</span><div><h3>Entendimento</h3><p>Conversamos sobre seu serviço, seu público e o que precisa melhorar.</p></div></div><div><span>02</span><div><h3>Planejamento</h3><p>Combinamos o que será feito, as prioridades e os prazos.</p></div></div><div><span>03</span><div><h3>Desenvolvimento</h3><p>Cuido da aparência, da facilidade de uso e do funcionamento de cada entrega.</p></div></div><div><span>04</span><div><h3>Entrega</h3><p>Valido o projeto, faço os ajustes combinados e entrego a estrutura pronta para uso.</p></div></div></div></div></section><section class="contact-band"><div class="container"><span class="eyebrow" style="color:#ffe4e4">Próximo projeto</span><h2>Me conte o que você precisa. Vamos avaliar o melhor caminho.</h2><a class="btn" href="https://wa.me/5561998213684?text=Ol%C3%A1%2C%20Laura%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20meu%20pr%C3%B3ximo%20projeto.">Falar com Laura no WhatsApp ↗</a></div></section><BriefForm /></BaseLayout>
+<script>
+  // Ilustração de buscas: termos e estabelecimentos são fictícios, sem API do Google.
+  const localSearch = document.querySelector<HTMLElement>('.google-feature-art');
+  const query = document.querySelector<HTMLElement>('#local-search-query');
+  const list = document.querySelector<HTMLElement>('#local-search-list');
+  const category = document.querySelector<HTMLElement>('#local-search-category');
+  const demos = [
+    { term: 'oficina mecânica perto de mim', category: 'Oficinas', entries: [
+      ['Oficina do Bairro', 'Oficina mecânica · Informações e contato'],
+      ['Centro Automotivo Exemplo', 'Serviços automotivos · Ver no mapa'],
+      ['Mecânica Local', 'Manutenção de veículos · Saiba mais'] ] },
+    { term: 'mercados próximos a mim', category: 'Mercados', entries: [
+      ['Mercado da Região', 'Mercado · Horários e endereço'],
+      ['Mercadinho Exemplo', 'Mercearia · Ver no mapa'],
+      ['Supermercado do Bairro', 'Supermercado · Contato'] ] },
+    { term: 'salão de beleza perto de mim', category: 'Salões', entries: [
+      ['Espaço Beleza Exemplo', 'Salão de beleza · Serviços'],
+      ['Studio da Região', 'Cabeleireiro · Ver no mapa'],
+      ['Salão do Bairro', 'Beleza e cuidados · Contato'] ] },
+    { term: 'clínica odontológica próxima a mim', category: 'Clínicas', entries: [
+      ['Clínica Sorriso Exemplo', 'Odontologia · Informações'],
+      ['Consultório da Região', 'Dentista · Ver no mapa'],
+      ['Odonto Bairro', 'Clínica odontológica · Contato'] ] }
+  ];
+  if (localSearch && query && list && category) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0;
+    let count = demos[0].term.length;
+    let phase: 'hold' | 'delete' | 'type' = 'hold';
+    let nextAt = performance.now() + 2400;
+    let visible = false;
+    let timer: number | undefined;
+    function showResults(demo: (typeof demos)[number]) {
+      category!.textContent = demo.category;
+      list!.replaceChildren(...demo.entries.map(([name, detail], i) => {
+        const item = document.createElement('div'); item.className = 'demo-result';
+        const number = document.createElement('span'); number.className = 'demo-result-icon'; number.setAttribute('aria-hidden', 'true'); number.textContent = String(i + 1).padStart(2, '0');
+        const body = document.createElement('div'); body.className = 'demo-result-body';
+        const heading = document.createElement('strong'); heading.textContent = name;
+        const desc = document.createElement('small'); desc.textContent = detail;
+        const arrow = document.createElement('span'); arrow.className = 'demo-result-arrow'; arrow.setAttribute('aria-hidden', 'true'); arrow.textContent = '↗'; body.append(heading, desc); item.append(number, body, arrow); return item;
+      }));
+    }
+    function tick() {
+      if (!visible || document.hidden || reducedMotion.matches) return;
+      const now = performance.now();
+      if (now < nextAt) return;
+      if (phase === 'hold') { phase = 'delete'; nextAt = now + 70; }
+      else if (phase === 'delete') {
+        count = Math.max(0, count - 2);
+        query!.textContent = demos[index].term.slice(0, count);
+        if (!count) { index = (index + 1) % demos.length; phase = 'type'; nextAt = now + 350; }
+        else nextAt = now + 45;
+      } else {
+        count = Math.min(demos[index].term.length, count + 1);
+        query!.textContent = demos[index].term.slice(0, count);
+        if (count === demos[index].term.length) { showResults(demos[index]); phase = 'hold'; nextAt = now + 2900; }
+        else nextAt = now + 85;
+      }
+    }
+    if (!reducedMotion.matches) {
+      const observer = new IntersectionObserver(entries => { visible = entries.some(e => e.isIntersecting); }, { threshold: .15 });
+      observer.observe(localSearch);
+      timer = window.setInterval(tick, 45);
+      window.addEventListener('pagehide', () => { if (timer) clearInterval(timer); observer.disconnect(); }, { once: true });
+    }
+  }
+</script>
+<style>.hero{padding:72px 0 110px;position:relative;isolation:isolate;overflow:hidden}.hero-inner{position:relative;z-index:1}.hero-motion{pointer-events:none;position:absolute;inset:-15% -5% -5%;z-index:0;opacity:.32}.hero-motion svg{width:100%;height:100%;overflow:visible}.motion-grid{fill:none;stroke:#d5cfc7;stroke-width:1;opacity:.42}.motion-geometry{fill:none;stroke:#c92b35;stroke-width:1;opacity:.45;transform-origin:70% 40%;animation:geometry-drift 22s ease-in-out infinite alternate}.motion-trace{fill:none;stroke:#bcaaa4;stroke-width:1.2;stroke-dasharray:6 13;animation:trace-slide 30s linear infinite;opacity:.7}@keyframes geometry-drift{from{transform:translate(-20px,8px) rotate(-3deg)}to{transform:translate(25px,-20px) rotate(5deg)}}@keyframes trace-slide{to{stroke-dashoffset:-450}}@media(prefers-reduced-motion:reduce){.motion-geometry,.motion-trace{animation:none!important}}.hero-inner{display:grid;grid-template-columns:1.18fr .82fr;gap:70px;align-items:center}.hero h1{margin:0 0 30px}.hero h1 em{font-style:normal;color:var(--red)}.hero-content>p{font-size:19px;max-width:600px;color:#56534f}.actions{display:flex;gap:30px;align-items:center;margin-top:36px}.hero-visual{position:relative;min-height:510px;background:#242423;color:white;overflow:hidden;isolation:isolate}.hero-visual img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:53% 50%;filter:saturate(.64) contrast(.95) brightness(.78);transform:scale(1.04);transition:transform 1.1s cubic-bezier(.2,.7,.3,1),filter .8s}.hero-visual:hover img{transform:scale(1.085);filter:saturate(.76) contrast(.97) brightness(.83)}.hero-photo-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,19,19,.13) 35%,rgba(19,17,17,.85) 100%),linear-gradient(90deg,rgba(201,43,53,.14),transparent 65%);z-index:1}.intro-copy{padding-top:20px}.intro-copy p{font-size:18px;color:#595650}.intro-copy .text-link{margin-top:15px}.work-top{display:flex;justify-content:space-between;align-items:end;gap:20px}.portfolio-note{margin-top:20px}.portfolio-breadth{max-width:740px;margin:35px 0 0;color:var(--muted);font-size:15px;line-height:1.65}.method-steps>div{display:grid;grid-template-columns:50px 1fr;gap:15px;margin-bottom:25px}.method-steps span{font-size:14px;font-weight:700;color:var(--red)}.method-steps h3{font-size:25px;margin-bottom:6px}.method-steps p{color:var(--muted)}@media(max-width:1050px){.hero-inner{gap:35px}.hero-visual{min-height:460px}.actions{flex-wrap:wrap}}@media(max-width:780px){.hero{padding:55px 0 70px}.hero-inner{grid-template-columns:1fr}.hero-visual{min-height:300px}.hero-visual img{object-position:center 44%}.work-top{display:block}}@media(max-width:600px){.hero-visual{min-height:260px}.actions{align-items:stretch;gap:22px}.hero-content>p{font-size:17px}}
+/* Seções de posicionamento e soluções */
+.solution-index{background:#f4f0ea}.solution-index-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:36px;background:#d5ccc2;border:1px solid #d5ccc2}.solution-tile{background:#f4f0ea;padding:30px 28px;color:inherit;text-decoration:none;transition:background .2s}.solution-tile:hover{background:#fff}.solution-tile>span,.traffic-tag,.preview-kicker{font-size:11px;font-weight:700;letter-spacing:.11em;color:var(--red)}.solution-tile h3{font-size:25px;line-height:1.2;margin:18px 0}.solution-tile p{color:var(--muted);font-size:15px;line-height:1.65}.solution-tile strong{display:inline-block;margin-top:20px;font-size:14px;color:var(--red)}.feature-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:75px;align-items:center}.feature-layout h2{max-width:720px}.feature-layout p,.paid-traffic p{color:var(--muted);line-height:1.7}.feature-points{padding-left:20px;margin:27px 0;line-height:1.75}.feature-points li{padding-left:4px;margin-bottom:8px}.feature-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap}.feature-note{font-size:12px!important;line-height:1.6!important;margin-top:18px}.featured-google{background:#fff}.google-feature-art{padding:45px 32px;background:#eae4dd;border:1px solid #ded4ca}.search-pill{display:flex;align-items:center;gap:11px;border:1px solid #d3cec8;padding:15px 19px;background:#fff;border-radius:28px;font-size:14px;color:#53504b}.search-dot{display:block;width:13px;height:13px;border:3px solid #be3039;border-radius:100%}.search-magnify{margin-left:auto;font-size:22px}.business-preview{background:#fff;padding:35px 27px;margin:19px 13px 0;border:1px solid #ddd8d1;box-shadow:0 16px 34px rgba(32,28,24,.07)}.preview-name{font-size:26px;font-weight:700;line-height:1.2;margin:16px 0 26px;color:#24201d}.preview-rule{height:1px;background:#dedad5;margin-bottom:24px}.preview-line{height:9px;background:#e8e4de;margin:13px 0}.preview-line.w90{width:90%}.preview-line.w65{width:65%}.preview-chips{display:flex;flex-wrap:wrap;gap:7px;margin:25px 0}.preview-chips span{border:1px solid #d9d1c8;padding:7px 10px;font-size:12px}.preview-action{font-size:13px;padding:14px;background:#f5f2ee;color:#514b45;line-height:1.5}.paid-traffic{background:#f5f2ed}.traffic-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px}.traffic-item{border:1px solid #d5cdc4;padding:34px;background:#fff}.traffic-item h3{font-size:30px;line-height:1.22;margin:18px 0}.traffic-item p{font-size:16px}.traffic-item ul{padding-left:20px;margin:22px 0 27px;line-height:1.8;font-size:15px}.digital-build{background:#fff}.build-list{margin:28px 0}.build-list>div{border-top:1px solid #ded8d1;padding:17px 0}.build-list h3{font-size:20px;margin:0 0 5px}.build-list p{margin:0;font-size:15px}.build-visual{background:#272524;color:#fff;min-height:450px;padding:30px;display:flex;flex-direction:column;justify-content:space-between}.build-visual-header{display:flex;gap:7px;align-items:center}.build-visual-header span{width:8px;height:8px;border-radius:50%;background:#786d68}.build-visual-header small{margin-left:auto;font-size:10px;letter-spacing:.16em;color:#bdb0aa}.build-flow{display:flex;flex-direction:column;align-items:center;gap:0}.build-flow div{border:1px solid #746d69;padding:20px;width:min(100%,310px);font-size:19px;text-align:center}.build-flow i{height:35px;border-left:1px solid #c92b35}.build-visual>p{color:#c6beba!important;font-size:13px;margin:0;text-align:center}@media(max-width:900px){.feature-layout{gap:34px}.solution-index-grid{grid-template-columns:1fr}.solution-tile{padding:24px}.traffic-item{padding:26px}}@media(max-width:780px){.feature-layout,.traffic-grid{grid-template-columns:1fr}.google-feature-art{max-width:540px;width:100%;box-sizing:border-box}.build-visual{min-height:380px}.traffic-item h3{font-size:25px}}@media(max-width:480px){.google-feature-art{padding:22px 14px}.business-preview{margin:14px 0 0;padding:24px 16px}.preview-name{font-size:22px}.feature-actions{align-items:flex-start;gap:18px}.solution-tile h3{font-size:22px}}
+
+/* Ajustes de hierarquia e responsividade (sobrescrevem títulos globais) */
+.hero{padding:clamp(48px,6vw,82px) 0 clamp(56px,7vw,90px)}
+.hero-inner{grid-template-columns:minmax(0,1.07fr) minmax(0,.93fr);gap:clamp(32px,4vw,64px);align-items:center}
+.hero-content,.hero-visual,.intro .two-col>*,.feature-layout>*,.traffic-grid>*,.solution-index-grid>*{min-width:0}
+.hero h1{font-size:clamp(36px,3.55vw,58px);line-height:1.08;letter-spacing:-.044em;max-width:680px;margin:0 0 24px;text-wrap:balance;overflow-wrap:normal}
+.hero h1 em{display:inline;color:var(--red)}
+.hero-content>p{font-size:clamp(16px,1.25vw,18px);line-height:1.68;max-width:570px;margin:0}
+.hero-visual{min-height:clamp(345px,32vw,460px)}
+.actions{gap:14px 25px;margin-top:28px;flex-wrap:wrap}
+.actions .btn{max-width:100%;white-space:normal;text-align:center;line-height:1.4}
+.intro.section{padding-top:clamp(66px,7vw,100px);padding-bottom:clamp(66px,7vw,100px)}
+.intro .two-col{align-items:start;gap:clamp(36px,5vw,88px)}
+.intro h2{font-size:clamp(30px,2.75vw,43px);line-height:1.17;letter-spacing:-.035em;max-width:625px;text-wrap:balance;margin:12px 0 0}
+.intro-copy{padding-top:4px;max-width:570px}
+.intro-copy p{font-size:clamp(16px,1.15vw,18px);line-height:1.72;margin:0 0 18px}
+.section-heading h2,.method h2,.contact-band h2{font-size:clamp(30px,3vw,46px);line-height:1.16;letter-spacing:-.035em;text-wrap:balance;max-width:900px}
+.section-heading p{max-width:720px;line-height:1.7}
+.feature-layout{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(32px,5vw,72px)}
+.feature-layout h2{font-size:clamp(30px,2.85vw,44px);line-height:1.17;letter-spacing:-.035em;text-wrap:balance;margin:12px 0 20px}
+.feature-layout p{font-size:16px;line-height:1.72}
+.traffic-item h3{font-size:clamp(23px,2.1vw,29px);line-height:1.25}
+.solution-tile h3{font-size:clamp(21px,1.7vw,25px)}
+.method h2{max-width:560px}
+.contact-band h2{max-width:820px}
+@media(max-width:1050px){
+ .hero-inner{grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:32px}
+ .hero h1{font-size:clamp(34px,4vw,46px)}
+ .hero-visual{min-height:370px}
+ .intro h2{font-size:clamp(29px,3.5vw,38px)}
+ .feature-layout h2{font-size:clamp(29px,3.6vw,38px)}
+}
+@media(max-width:780px){
+ .hero{padding:46px 0 64px}
+ .hero-inner{grid-template-columns:minmax(0,1fr);gap:35px}
+ .hero h1{font-size:clamp(34px,7.5vw,49px);max-width:660px}
+ .hero-content>p{max-width:630px}
+ .hero-visual{min-height:340px;max-height:470px}
+ .intro .two-col{display:grid;grid-template-columns:minmax(0,1fr);gap:25px}
+ .intro h2{font-size:clamp(29px,5.4vw,39px)}
+ .section-heading h2,.method h2,.contact-band h2{font-size:clamp(29px,5.2vw,39px)}
+ .feature-layout{grid-template-columns:minmax(0,1fr);gap:30px}
+ .feature-layout h2{font-size:clamp(29px,5vw,39px)}
+ .traffic-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:480px){
+ .hero h1{font-size:clamp(32px,9vw,40px);line-height:1.12;letter-spacing:-.04em}
+ .hero-visual{min-height:275px}
+ .hero-content>p{font-size:16px}
+ .actions{align-items:flex-start;gap:18px}
+ .actions .btn{width:100%;box-sizing:border-box}
+ .intro h2,.feature-layout h2,.section-heading h2,.method h2,.contact-band h2{font-size:clamp(28px,7vw,34px)}
+ .feature-layout p,.intro-copy p{font-size:16px}
+ .traffic-item{padding:23px}
+}
+
+/* CTA final centralizado, sem alterar o restante da página */
+.contact-band{padding-block:clamp(64px,7vw,96px)}
+.contact-band .container{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0}
+.contact-band .eyebrow{display:block;margin-bottom:16px}
+.contact-band h2{width:100%;max-width:720px;margin:0 auto 30px;font-size:clamp(30px,3vw,43px);line-height:1.2;letter-spacing:-.035em;text-wrap:balance}
+.contact-band .btn{width:auto;max-width:100%;margin-inline:auto}
+@media(max-width:600px){
+ .contact-band{padding-block:64px}
+ .contact-band h2{max-width:420px;font-size:clamp(28px,7vw,34px);margin-bottom:26px}
+ .contact-band .btn{width:auto;min-height:48px;padding:14px 22px}
+}
+
+/* Componente visual de busca local: layout contido, limpo e responsivo */
+.google-feature-art{background:#eee9e3;border:1px solid #ded8d0;padding:clamp(14px,2vw,24px);min-width:0;width:100%;box-sizing:border-box}
+.local-demo-window{overflow:hidden;background:#fff;border:1px solid #dcd7d1;box-shadow:0 18px 38px rgba(32,24,20,.08);width:100%;min-width:0}
+.local-demo-bar{display:flex;align-items:center;gap:13px;background:#252321;color:#d3ccc5;padding:13px 17px;font-size:10px;letter-spacing:.1em;font-weight:700;min-width:0}
+.local-demo-bar>span:nth-child(2){min-width:0;flex:1}
+.local-demo-dots{display:flex;gap:5px;flex-shrink:0}.local-demo-dots i{width:6px;height:6px;border-radius:50%;background:#847d77}.local-demo-dots i:first-child{background:#c92b35}
+.local-demo-live{display:inline-flex;align-items:center;gap:6px;font-size:9px;white-space:nowrap;color:#e2d8d2}.local-demo-live span{width:6px;height:6px;background:#e0464f;border-radius:50%}
+.local-demo-content{padding:clamp(15px,2.5vw,25px);min-width:0}
+.local-demo-overline{font-size:12px;color:#77716c;margin-bottom:13px;line-height:1.5}
+.google-feature-art .search-pill{display:flex;align-items:center;gap:11px;border:1px solid #ded9d4;border-radius:6px;background:#faf9f7;padding:13px 14px;min-height:51px;color:#211f1e;box-shadow:none;width:100%;min-width:0;box-sizing:border-box}
+.google-feature-art .search-pill svg{flex-shrink:0;color:#c92b35}
+.search-query-wrap{display:flex;min-width:0;align-items:center;flex:1;gap:2px}.search-query{min-width:0;overflow-wrap:anywhere;font-size:clamp(12px,1.05vw,14px);font-weight:600;line-height:1.45;text-align:left}
+.type-caret{display:inline-block;width:2px;height:17px;background:#c92b35;flex-shrink:0;animation:caret-blink .85s steps(1) infinite}@keyframes caret-blink{50%{opacity:0}}
+.search-demo-results{margin-top:18px;background:#fff;border:1px solid #eeeae6;padding:0 16px;min-width:0}
+.search-demo-results-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0 12px;border-bottom:1px solid #eeeae6;text-align:left}.search-demo-results-heading strong{font-size:12px;line-height:1.4;color:#282521}.search-demo-results-heading span{font-size:10px;color:#a32630;font-weight:700;background:#f9eeee;padding:5px 8px;white-space:nowrap}
+.search-demo-list{display:block;min-width:0}
+/* :global is required because JS creates the list rows, without Astro's scoped CSS attribute. */
+.search-demo-list :global(.demo-result){display:grid;grid-template-columns:34px minmax(0,1fr) 12px;align-items:center;gap:11px;padding:14px 0;border-bottom:1px solid #f0ece8;min-width:0;text-align:left}
+.search-demo-list :global(.demo-result:last-child){border-bottom:0}
+.search-demo-list :global(.demo-result-icon){display:flex;align-items:center;justify-content:center;width:32px;height:32px;background:#f5efeb;color:#b62933;font-size:10px;font-weight:800;flex-shrink:0}
+.search-demo-list :global(.demo-result-body){min-width:0;display:flex;flex-direction:column;gap:3px}
+.search-demo-list :global(.demo-result-body strong){display:block;font-size:12px;font-weight:750;color:#252321;line-height:1.4;overflow-wrap:anywhere}
+.search-demo-list :global(.demo-result-body small){display:block;font-size:10.5px;color:#756e68;line-height:1.45;overflow-wrap:anywhere}
+.search-demo-list :global(.demo-result-arrow){font-size:14px;color:#b92a33;align-self:center}
+.local-demo-foot{display:flex;gap:9px;align-items:center;padding:15px 1px 0;font-size:11px;line-height:1.5;color:#5f5a55;text-align:left}.local-demo-foot-symbol{color:#bf2d38;font-size:17px;font-weight:800}
+.google-feature-art .demo-disclaimer{font-size:10px!important;line-height:1.5!important;color:#77716d!important;margin:12px 2px 0!important;text-align:left}
+@media(max-width:600px){
+ .featured-google .google-feature-art{padding:11px;max-width:440px;margin-inline:auto;text-align:left}
+ .local-demo-bar{padding:11px 12px;gap:8px;font-size:8px;letter-spacing:.05em}
+ .local-demo-content{padding:14px 12px}
+ .local-demo-overline{font-size:11px;margin-bottom:10px}
+ .google-feature-art .search-pill{min-height:47px;padding:10px 11px;gap:9px}
+ .search-query{font-size:12px}
+ .search-demo-results{padding:0 11px;margin-top:13px}
+ .search-demo-results-heading{padding:12px 0}
+ .search-demo-results-heading strong{font-size:11px}
+ .search-demo-list :global(.demo-result){grid-template-columns:27px minmax(0,1fr) 10px;gap:8px;padding:12px 0}
+ .search-demo-list :global(.demo-result-icon){height:27px;width:27px;font-size:9px}
+ .search-demo-list :global(.demo-result-body strong){font-size:11px}
+ .search-demo-list :global(.demo-result-body small){font-size:10px}
+ .local-demo-foot{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){.type-caret{animation:none}}
+/* Centralização editorial no celular. Campos permanecem alinhados à esquerda para digitação. */
+@media(max-width:600px){
+ .hero-content,.intro .two-col,.intro-copy,.section-heading,.featured-google .feature-layout>div:first-child,.digital-build .feature-layout>div:first-child,.work-top,.portfolio-breadth,.method .two-col>div:first-child{text-align:center}
+ .hero h1,.hero-content>p,.intro h2,.intro-copy,.section-heading h2,.section-heading p,.feature-layout h2,.portfolio-breadth,.method h2{margin-left:auto;margin-right:auto}
+ .actions,.feature-actions{justify-content:center;align-items:center}
+ .actions .text-link,.feature-actions .text-link{justify-content:center}
+ .solution-tile{text-align:center}
+ .solution-tile h3{max-width:330px;margin-left:auto;margin-right:auto}
+ .feature-points,.traffic-item ul{list-style-position:inside;padding-left:0;text-align:center}
+ .feature-points li{padding-left:0}
+ .traffic-item,.service-item,.build-list>div,.method-steps>div{text-align:center}
+ .method-steps>div{grid-template-columns:1fr;gap:7px}
+ .method-steps span{display:block}
+ .service-item:hover{transform:none}
+ .work-top .text-link{justify-content:center;margin:8px auto 0}
+ .featured-google .google-feature-art{margin-inline:auto;text-align:left}
+ .build-visual{text-align:center}
+ .search-demo-top,.search-demo-results-heading,.demo-result{text-align:left}
+}
+
+
+/* Mobile: remove a altura reservada para a foto que deixa um vazio depois dos CTAs.
+   A composição e a foto do desktop permanecem inalteradas. */
+@media (max-width: 600px) {
+  .hero {
+    padding: 34px 0 38px;
+    min-height: 0;
+    height: auto;
+  }
+  .hero-inner {
+    display: block;
+    min-height: 0;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hero-content h1 {
+    max-width: 355px;
+    margin: 0 auto 19px;
+    font-size: clamp(32px, 8.7vw, 37px);
+    line-height: 1.12;
+    letter-spacing: -.052em;
+  }
+  .hero-content > p {
+    max-width: 350px;
+    margin-inline: auto;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .hero .actions {
+    margin-top: 25px;
+    gap: 12px;
+  }
+  .hero .actions .btn {
+    min-height: 51px;
+    padding: 13px 18px;
+  }
+  .hero .actions .text-link {
+    min-height: 38px;
+    padding: 6px 0;
+  }
+  .hero-visual {
+    display: none;
+    min-height: 0;
+  }
+  .hero-motion {
+    opacity: .08;
+  }
+}
+</style>
+
+<style is:global>
+/* Refinamento editorial: hierarquia, alinhamento e redução de elementos decorativos */
+:root{--paper:#fbfaf8;--ink:#171717;--red:#b82330;--muted:#626262}
+body{background:var(--paper)}
+.hero{padding:clamp(72px,8vw,128px) 0 clamp(72px,8vw,120px);background:#f4f2ee}
+.hero-motion{opacity:.14;filter:grayscale(1)}
+.hero-inner{align-items:center;gap:clamp(40px,6vw,100px)}
+.hero-content{max-width:730px}
+.hero-content h1{font-size:clamp(43px,5.3vw,78px);line-height:1.065;letter-spacing:-.058em;font-weight:800;margin-bottom:28px}
+.hero-content h1 em{color:var(--red);font-style:normal}
+.hero-content>p{font-size:clamp(16px,1.25vw,19px);line-height:1.7;max-width:620px;color:#454545}
+.hero .actions{margin-top:36px;gap:25px}
+.hero-visual{box-shadow:none!important;border-radius:0!important;overflow:hidden}
+.hero-visual img{filter:saturate(.84);border-radius:0!important}
+.hero-photo-shade{opacity:.35}
+.proof-line{background:#191919;color:#f4f2ee;border-top:1px solid #333}
+.proof-line-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px 24px;min-height:74px;font-size:10px;letter-spacing:.12em;font-weight:700}
+.proof-line a{color:#fff;text-decoration:underline;text-underline-offset:5px}
+.solution-tile,.project,.local-demo-window{border-radius:0!important}
+.solution-tile{transition:transform .2s ease,border-color .2s ease}
+.solution-tile:hover{transform:translateY(-3px)}
+.section-heading h2{letter-spacing:-.048em}
+@media(max-width:850px){.hero-inner{gap:30px}.hero{padding:72px 0}.proof-line-inner{justify-content:center;text-align:center;padding:22px 0}}
+@media(max-width:600px){.hero-content{text-align:center}.hero-content h1{font-size:clamp(36px,10vw,52px)}.hero-content>p{margin-inline:auto}.hero .actions{justify-content:center;flex-direction:column;align-items:stretch}.hero .text-link{justify-content:center}.hero-visual{max-width:360px;margin-inline:auto}.proof-line-inner{gap:14px}.proof-line-inner span{font-size:9px}.proof-line-inner a{width:100%}}
+
+
+/* Faixa de especialidades: grid legível no mobile, sem alterar o desktop. */
+@media (max-width: 600px) {
+  .proof-line {
+    border-top: 0;
+  }
+  .proof-line .proof-line-inner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+    gap: 0;
+    padding: 13px 0;
+    text-align: left;
+    align-items: stretch;
+  }
+  .proof-line-inner > span,
+  .proof-line-inner > a {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    min-height: 64px;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 750;
+    letter-spacing: .04em;
+    text-wrap: balance;
+  }
+  .proof-line-inner > span:nth-child(1),
+  .proof-line-inner > span:nth-child(3) {
+    border-right: 1px solid rgba(255,255,255,.14);
+  }
+  .proof-line-inner > span:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(255,255,255,.14);
+  }
+  .proof-line-inner > a {
+    width: auto;
+    color: #fff;
+    text-decoration: none;
+    text-underline-offset: 0;
+    border-bottom: 0;
+    justify-content: flex-start;
+  }
+  .proof-line-inner > a:focus-visible {
+    outline: 2px solid #e45e66;
+    outline-offset: -3px;
+  }
+}
+</style>
+
+<style is:global>
+/* Serviços V2: linhas editoriais, alinhamento estável e microinterações. */
+.services-redesign{background:#1d1d1d;color:#f7f5f1;overflow:hidden}
+.services-redesign .services-heading{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);align-items:end;gap:48px;margin-bottom:56px;text-align:left}
+.services-redesign .services-heading h2{font-size:clamp(36px,4.4vw,64px);line-height:1.12;letter-spacing:-.055em;margin:17px 0 0;max-width:760px}
+.services-redesign .services-heading h2 em{font-style:normal;color:#e75c65}
+.services-redesign .services-heading>p{color:#b9b7b4;font-size:17px;line-height:1.7;max-width:370px;margin:0 0 6px}
+.services-list{border-top:1px solid #494747}
+.service-row{display:grid;grid-template-columns:minmax(145px,.65fr) minmax(0,2fr) minmax(150px,.75fr);gap:clamp(20px,3vw,48px);align-items:center;padding:35px 4px 37px;border-bottom:1px solid #494747;position:relative;isolation:isolate;transition:padding .35s ease,border-color .35s ease}
+.service-row::before{content:'';position:absolute;inset:0 -18px;background:#2a2929;opacity:0;transform:scaleY(.86);transition:opacity .35s ease,transform .35s ease;z-index:-1}
+.service-row:hover::before,.service-row:focus-within::before{opacity:1;transform:scaleY(1)}
+.service-row:hover{padding-left:16px;padding-right:16px;border-color:#6c5556}
+.service-row-index{display:flex;flex-direction:column;gap:13px;align-self:start;padding-top:9px}
+.service-row-index>span{font-size:13px;font-weight:800;color:#f36b74;letter-spacing:.12em}
+.service-row-index small{font-size:12px;color:#a6a3a0;letter-spacing:.02em}
+.service-row-main h3{font-size:clamp(24px,2.5vw,36px);line-height:1.2;letter-spacing:-.045em;margin:0 0 12px}
+.service-row-main p{max-width:570px;color:#bdbbb8;font-size:15px;line-height:1.65;margin:0}
+.service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px}
+.service-tags span{font-size:11px;color:#c9c6c3;border:1px solid #52504f;padding:6px 10px;letter-spacing:.015em}
+.service-row-link{display:flex;align-items:center;justify-content:flex-end;gap:17px;white-space:nowrap;font-size:13px;font-weight:700;color:#fff;align-self:center}
+.service-arrow{display:grid;place-items:center;border:1px solid #67605e;width:42px;height:42px;font-size:20px;transition:background .3s,border-color .3s,transform .35s}
+.service-row:hover .service-arrow,.service-row-link:focus-visible .service-arrow{background:#c92b35;border-color:#c92b35;transform:rotate(45deg)}
+@media(min-width:781px) and (prefers-reduced-motion:no-preference){.service-row.reveal-ready{transition:opacity .75s ease,transform .75s cubic-bezier(.18,.75,.25,1),padding .35s ease,border-color .35s ease;transition-delay:calc(var(--item-index)*65ms)}.service-row.reveal-ready.is-visible{transition-delay:0ms}}
+@media(max-width:900px){.services-redesign .services-heading{grid-template-columns:1fr;gap:16px}.services-redesign .services-heading>p{max-width:650px}.service-row{grid-template-columns:90px minmax(0,1fr);gap:20px}.service-row-link{grid-column:2;justify-content:flex-start}.service-row-index{padding-top:4px}}
+@media(max-width:600px){.services-redesign .services-heading{text-align:center;gap:15px;margin-bottom:32px}.services-redesign .services-heading h2{font-size:clamp(30px,8vw,42px)}.services-redesign .services-heading>p{margin:0 auto;font-size:15px}.service-row{display:flex;flex-direction:column;gap:13px;align-items:center;text-align:center;padding:29px 6px}.service-row-index{align-self:center;flex-direction:row;align-items:center;gap:12px;padding:0}.service-row-main h3{font-size:27px}.service-row-main p{font-size:15px}.service-tags{justify-content:center}.service-row-link{justify-content:center;align-self:center;margin-top:4px}.service-row:hover{padding:29px 6px}.service-row::before{inset:0 -8px}}
+@media(prefers-reduced-motion:reduce){.service-row,.service-row::before,.service-arrow{transition:none!important}}
+</style>
