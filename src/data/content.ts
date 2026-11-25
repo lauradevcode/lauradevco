@@ -11,11 +11,20 @@ export const services = [
 // Portfólio real: cada projeto representa um trabalho, não um nicho exclusivo.
 // Coloque os PNGs em public/images/projetos/ com os nomes abaixo.
 // A home mostra todos os projetos, do mais recente ao mais antigo; /portfolio também mostra TODOS.
-// Para incluir novos, insira os objetos no início do array mantendo o mesmo formato.
+// Para incluir novos, informe publishedAt (AAAA-MM-DD). A ordenação é automática; projetos sem data ficam ao final na ordem original.
 // Botão "Visualizar site ao vivo" aparece apenas para endereço HTTPS confirmado.
 // Se não houver link, mantenha url: ''.
 // Descreva somente entregas comprovadas; URLs são opcionais.
-export const projects = [
+const projectEntries: { title: string; category: string; description: string; scope: string; image: string; url: string; publishedAt?: string }[] = [
+  {
+    title: 'Helena Duarte — Estética Avançada',
+    category: 'Estética feminina · Landing page premium',
+    description: 'Projeto demonstrativo para clínicas de estética, com direção visual editorial, vídeo de procedimentos e apresentação dos tratamentos.',
+    scope: 'Landing page responsiva com microinterações, vídeo no banner, pré-atendimento via WhatsApp e estrutura de SEO local.',
+    image: '/images/projetos/helena-duarte-estetica.webp',
+    url: 'https://lp-esteticafeminina.vercel.app/',
+    publishedAt: '2026-11-25'
+  },
   {
     title: 'NOMA Arquitetura & Interiores',
     category: 'Arquitetura e interiores · Página de apresentação',
@@ -38,6 +47,7 @@ export const projects = [
     description: 'Landing page para apresentar serviços de estética automotiva, destacar os cuidados com o veículo e facilitar a solicitação de orçamentos.',
     scope: 'Criação de landing page com identidade visual automotiva, apresentação dos serviços e chamadas para contato pelo WhatsApp.',
     image: '/images/projetos/nova-detail-estetica-automotiva.png',
+    publishedAt: '2026-11-25',
     url: 'https://lp-esteticaautomotiva-flax.vercel.app/'
   },
   {
@@ -65,3 +75,6 @@ export const projects = [
     url: 'https://lp-luan-personal.vercel.app/' // Site ao vivo ainda não verificado; mantém o botão oculto.
   }
 ];
+
+// Datas iguais preservam a ordem de cadastro; insira o mais novo antes dos demais.
+export const projects = [...projectEntries].sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""));
