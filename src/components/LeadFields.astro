@@ -1,0 +1,20 @@
+---
+const services = ['Site institucional / Landing page','Loja virtual','Sistema personalizado / Plataforma digital','Google Meu Negócio','Google Ads','Meta Ads','Gestão de anúncios (Google e Meta)','Design e conteúdo para redes sociais','Edição de vídeo / Vinheta','Pacote de serviços','Ainda não sei'];
+const niches = ['Estética e beleza','Psicologia','Advocacia','Odontologia','Saúde e bem-estar','Personal trainer / Academia','Oficina / Automotivo','Arquitetura e interiores','Contabilidade','Comércio / Loja virtual','Prestação de serviços','Outro'];
+const budgets = ['Até R$ 300','R$ 301 a R$ 500','R$ 501 a R$ 1.000','R$ 1.001 a R$ 2.000','R$ 2.001 a R$ 5.000','Acima de R$ 5.000','Informar outro valor','Ainda não tenho orçamento definido'];
+---
+<form class="qualification-form" data-qualification>
+  <div class="q-row">
+    <label>Seu nome <input name="nome" autocomplete="name" required pattern=".*\S.*" maxlength="80" placeholder="Como posso chamar você?" /></label>
+    <label>Empresa ou nome profissional <input name="empresa" autocomplete="organization" required pattern=".*\S.*" maxlength="100" placeholder="Nome do seu negócio" /></label>
+  </div>
+  <label>Área de atuação <select name="nicho" required><option value="" disabled selected>Selecione seu segmento</option>{niches.map(n=><option>{n}</option>)}</select></label>
+  <label data-other-niche hidden>Qual sua área de atuação? <input name="nichoOutro" maxlength="100" disabled placeholder="Digite seu segmento" /></label>
+  <label>Qual serviço você procura? <select name="servico" required><option value="" disabled selected>Selecione o serviço</option>{services.map(s=><option>{s}</option>)}</select></label>
+  <label>Qual seu principal objetivo? <textarea name="objetivo" rows="2" maxlength="500" placeholder="Ex.: receber mais orçamentos, criar um site ou organizar atendimentos" ></textarea><small>Opcional</small></label>
+  <label>Quanto pretende investir na contratação do serviço? <select name="orcamento" required><option value="" disabled selected>Selecione uma faixa de investimento</option>{budgets.map(b=><option>{b}</option>)}</select><small>Para serviços mensais, considere o valor mensal. Para projetos pontuais, o valor total. Não inclua a verba dos anúncios.</small></label>
+  <label data-custom-budget hidden>Valor disponível (R$) <input type="number" inputmode="decimal" name="valor" min="0" max="100000000" step="0.01" disabled placeholder="Ex.: 750" /></label>
+  <fieldset data-ad-budget hidden><legend>Investimento em anúncios</legend><p>O valor destinado ao Google ou à Meta é pago separadamente da gestão.</p><label>Qual verba mensal você tem reservada para anúncios? <select name="midia" disabled><option value="" disabled selected>Selecione uma opção</option><option>Até R$ 300</option><option>R$ 301 a R$ 600</option><option>R$ 601 a R$ 1.000</option><option>R$ 1.001 a R$ 2.000</option><option>Acima de R$ 2.000</option><option>Ainda não tenho verba reservada</option><option>Informar outro valor</option></select></label><label data-custom-media hidden>Verba mensal (R$) <input type="number" inputmode="decimal" name="valorMidia" min="0" max="100000000" step="0.01" disabled /></label></fieldset>
+  <button class="btn q-submit" type="submit">Enviar pelo WhatsApp <span aria-hidden="true">↗</span></button>
+  <p class="q-note">Suas respostas serão inseridas em uma mensagem no WhatsApp. Você poderá revisar e confirmar o envio. Não armazenamos os dados deste formulário no site.</p>
+</form>

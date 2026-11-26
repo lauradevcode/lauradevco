@@ -1,0 +1,68 @@
+---
+import LeadFields from './LeadFields.astro';
+---
+<dialog class="lead-dialog" id="lead-dialog" aria-labelledby="lead-dialog-title">
+  <div class="q-header"><div><span class="eyebrow">LAURA DEV CODE / PROJETOS</span><h2 id="lead-dialog-title">Vamos falar sobre seu projeto.</h2><p>Responda algumas perguntas rápidas para eu entender o que seu negócio precisa.</p></div><button type="button" class="q-close" aria-label="Fechar formulário" data-close-lead>×</button></div>
+  <div class="q-body"><LeadFields /></div>
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#lead-dialog');
+  let trigger: HTMLElement | null = null;
+  const form = dialog?.querySelector<HTMLFormElement>('form');
+  const serviceFor = (a: HTMLAnchorElement) => {
+    const raw = a.getAttribute('href') || '';
+    let message = ''; try { message = new URL(raw, location.href).searchParams.get('text') || ''; } catch {}
+    const text = (a.textContent + ' ' + message).toLowerCase();
+    if (/google ads|anunciar no google|campanha no google/.test(text)) return 'Google Ads';
+    if (/meta ads|instagram e facebook|anunciar nas redes/.test(text)) return 'Meta Ads';
+    if (/perfil da empresa|meu perfil|google meu negócio/.test(text)) return 'Google Meu Negócio';
+    if (/design|artes|carross[eé]is/.test(text)) return 'Design e conteúdo para redes sociais';
+    if (/loja virtual|lojas virtuais/.test(text)) return 'Loja virtual';
+    if (/site ou sistema/.test(text)) return '';
+    if (/sistema/.test(text)) return 'Sistema personalizado / Plataforma digital';
+    if (/cria[rç][aã]o de sites|criar meu site|landing page/.test(text)) return 'Site institucional / Landing page';
+    if (/gestão de anúncios/.test(text)) return 'Gestão de anúncios (Google e Meta)';
+    return '';
+  };
+  document.addEventListener('click', e => {
+    if (!(e.target instanceof Element) || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target.closest<HTMLAnchorElement>('a[href]');
+    if (!a || !dialog || typeof dialog.showModal !== 'function') return;
+    const href = a.getAttribute('href') || '';
+    if (!(/^https:\/\/wa\.me\/5561998213684(?:\?|$|\/)/i.test(href) || ['/#orcamento','#orcamento','/contato','/contato/'].includes(href))) return;
+    e.preventDefault(); trigger = a;
+    const select = form?.elements.namedItem('servico') as HTMLSelectElement | null;
+    const value = serviceFor(a);
+    if (select && value) { select.value = value; select.dispatchEvent(new Event('change')); }
+    if (!dialog.open) { dialog.showModal(); document.documentElement.classList.add('lead-open'); }
+    dialog.querySelector<HTMLElement>('.q-close')?.focus();
+  });
+  dialog?.querySelector('[data-close-lead]')?.addEventListener('click',()=>dialog.close());
+  dialog?.addEventListener('click', e=>{ if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+  dialog?.addEventListener('close',()=>{document.documentElement.classList.remove('lead-open');trigger?.focus();});
+  document.querySelectorAll<HTMLFormElement>('[data-qualification]').forEach(f=>{
+    const get=(n:string)=>f.elements.namedItem(n) as HTMLInputElement | HTMLSelectElement;
+    const toggle=(selector:string,name:string,show:boolean)=>{const el=f.querySelector<HTMLElement>(selector);if(el)el.hidden=!show; const field=get(name);field.disabled=!show;field.required=show;};
+    const sync=()=>{
+      toggle('[data-other-niche]','nichoOutro',get('nicho').value==='Outro');
+      toggle('[data-custom-budget]','valor',get('orcamento').value==='Informar outro valor');
+      const ads=/Ads|Gestão de anúncios|Pacote de serviços/.test(get('servico').value);
+      toggle('[data-ad-budget]','midia',ads);
+      toggle('[data-custom-media]','valorMidia',ads&&get('midia').value==='Informar outro valor');
+    };
+    f.addEventListener('change',sync);sync();
+    f.addEventListener('submit',e=>{
+      e.preventDefault(); if(!f.reportValidity())return;
+      const d=new FormData(f);const v=(n:string)=>String(d.get(n)??'').trim();
+      const money=(n:string)=>Number(v(n)).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+      const budget=v('orcamento')==='Informar outro valor'?money('valor'):v('orcamento');
+      const media=v('midia')==='Informar outro valor'?money('valorMidia'):v('midia');
+      const msg=['Olá, Laura! Vim pelo seu portfólio e gostaria de conversar sobre um projeto.','','*Nome:* '+v('nome'),'*Empresa / profissional:* '+v('empresa'),'*Nicho:* '+(v('nicho')==='Outro'?v('nichoOutro'):v('nicho')),'*Serviço:* '+v('servico'),'*Investimento no serviço:* '+budget, ...(media?['*Verba mensal para anúncios:* '+media]:[]), ...(v('objetivo')?['*Objetivo:* '+v('objetivo')]:[])].join('\n');
+      const analytics=(window as Window & {gtag?: (...args:unknown[])=>void}).gtag; analytics?.('event','brief_form_submit_intent',{transport_type:'beacon'});
+      window.location.assign('https://wa.me/5561998213684?text='+encodeURIComponent(msg));
+    });
+  });
+</script>
+<style is:global>
+.lead-dialog{position:fixed;inset:0;margin:auto;width:min(680px,calc(100% - 32px));max-height:calc(100dvh - 48px);padding:0;border:1px solid #ddd7d1;border-radius:12px;background:#faf9f7;color:#191919;box-shadow:0 24px 90px #0004;overflow:auto;overscroll-behavior:contain}.lead-dialog::backdrop{background:#171717a6;backdrop-filter:blur(3px)}.lead-open{overflow:hidden}.q-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:28px 32px 22px;border-bottom:1px solid #ddd7d1;position:sticky;top:0;background:#faf9f7;z-index:1}.q-header h2{font-size:clamp(24px,3.5vw,34px);line-height:1.12;margin:10px 0}.q-header p{font-size:14px;color:#605b55;margin:0;line-height:1.5}.q-close{flex:none;width:44px;height:44px;border:1px solid #ddd7d1;background:transparent;color:#191919;font-size:28px;cursor:pointer}.q-body{padding:24px 32px 30px}.qualification-form{display:grid;gap:18px}.q-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}.qualification-form label{display:grid;gap:7px;font-size:14px;font-weight:650;min-width:0}.qualification-form [hidden]{display:none!important}.qualification-form :is(input,select,textarea){font:inherit;font-size:16px;font-weight:400;width:100%;min-width:0;min-height:48px;border:1px solid #bdb6af;border-radius:4px;padding:12px;background:white;color:#191919;box-sizing:border-box}.qualification-form :is(input,select,textarea):focus-visible,.q-close:focus-visible{outline:2px solid var(--red,#c92b35);outline-offset:2px}.qualification-form textarea{resize:vertical}.qualification-form small,.q-note,.qualification-form fieldset p{font-size:12px;color:#605b55;font-weight:400;line-height:1.5;margin:0}.qualification-form fieldset{min-width:0;border:1px solid #d8d0c9;padding:16px;display:grid;gap:12px;margin:0}.qualification-form legend{font-weight:700;font-size:14px;padding:0 6px}.q-submit{width:100%;justify-content:space-between;min-height:52px}.q-note{max-width:550px}.qualification-form .q-submit span{font-size:18px}@media(max-width:600px){.lead-dialog{width:100%;max-width:100%;max-height:100dvh;height:100dvh;border-radius:0;border:0}.q-header{padding:18px 20px}.q-body{padding:20px 20px calc(24px + env(safe-area-inset-bottom))}.q-row{grid-template-columns:1fr}.qualification-form{gap:16px}}@media(prefers-reduced-motion:no-preference){.lead-dialog[open]{animation:q-appear .18s ease-out}@keyframes q-appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}}
+</style>
